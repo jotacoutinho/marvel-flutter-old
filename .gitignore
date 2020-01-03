@@ -2,3 +2,5 @@
 .dart_tool/
 .packages
 build/
+ios/Podfile.lock
+ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
