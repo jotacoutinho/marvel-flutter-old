@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>277954828042-a3h1cqm2a0ghc1qdmrljqiiiisuej5qp.apps.googleusercontent.com</string>
+	<string>277954828042-89umnoktom39cmf47u2bfi86l1g9vosr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.277954828042-a3h1cqm2a0ghc1qdmrljqiiiisuej5qp</string>
+	<string>com.googleusercontent.apps.277954828042-89umnoktom39cmf47u2bfi86l1g9vosr</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>277954828042-imgdoblk7i6p530kalh62og93os00pla.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAkr9iTQtaaISSHWfQkkGuJqHh8nt_nelM</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.flutter.marvel</string>
+	<string>com.4all.test</string>
 	<key>PROJECT_ID</key>
 	<string>marvel-flutter-dx</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:277954828042:ios:376fb48a0d05ed3e074cf3</string>
+	<string>1:277954828042:ios:d0f5b373771f86e4074cf3</string>
 	<key>DATABASE_URL</key>
 	<string>https://marvel-flutter-dx.firebaseio.com</string>
 </dict>
