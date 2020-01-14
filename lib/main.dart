@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 
 void main() => runApp(MyApp());
 
@@ -45,16 +47,42 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  Map<PermissionGroup, PermissionStatus> permissions;
+  String _message = '';
+  final FirebaseMessaging _fcm = FirebaseMessaging();
+
+    @override
+    void initState() {
+      // TODO: implement initState
+      super.initState();
+      getMessage();
+    }
+
+    void getMessage(){
+        _fcm.configure(
+            onMessage: (Map<String, dynamic> message) async {
+          print('on message $message');
+          setState(() => _message = message["notification"]["title"]);
+        },
+        onResume: (Map<String, dynamic> message) async {
+          print('on resume $message');
+          setState(() => _message = message["notification"]["title"]);
+        }, onLaunch: (Map<String, dynamic> message) async {
+          print('on launch $message');
+          setState(() => _message = message["notification"]["title"]);
+        });
+      }
 
   void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
+    setState((){
+      _requestLocation();
       _counter++;
     });
+  }
+
+  void _requestLocation() async {
+    permissions = await PermissionHandler().requestPermissions([PermissionGroup.location]);
+    // await PermissionHandler().shouldShowRequestPermissionRationale(PermissionGroup.location);
   }
 
   @override
@@ -108,4 +136,5 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
 }
